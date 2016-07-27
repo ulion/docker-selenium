@@ -1,6 +1,11 @@
 {
   "capabilities": [
     {
+      "browserName": "operablink",
+      "maxInstances": 1,
+      "seleniumProtocol": "WebDriver"
+    },
+    {
       "browserName": "opera",
       "maxInstances": 1,
       "seleniumProtocol": "WebDriver"

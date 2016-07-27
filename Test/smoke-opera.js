@@ -1,1 +1,1 @@
-require('./smoke-test')('opera');
+require('./smoke-test')('operablink');
