@@ -24,14 +24,6 @@ RUN wget --no-verbose -O /tmp/operadriver_linux64.zip https://github.com/operaso
   && chmod 755 /opt/selenium/operadriver-$OPERA_DRIVER_VERSION \
   && ln -fs /opt/selenium/operadriver-$OPERA_DRIVER_VERSION /usr/bin/operadriver
 
-#==============================
-# Scripts to run Selenium Node
-#==============================
-COPY \
-  entry_point.sh \
-    /opt/bin/
-RUN chmod +x /opt/bin/entry_point.sh
-
 #========================
 # Selenium Configuration
 #========================
