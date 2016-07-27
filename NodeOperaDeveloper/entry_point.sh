@@ -36,6 +36,7 @@ xvfb-run -n $SERVERNUM --server-args="-screen 0 $GEOMETRY -ac +extension RANDR" 
   java ${JAVA_OPTS} -jar /opt/selenium/selenium-server-standalone.jar \
     -Dwebdriver.opera.driver="/usr/bin/operadriver" \
     -Dwebdriver.chrome.driver="/usr/bin/operadriver" \
+    -debug \
     -role node \
     -hub http://$HUB_PORT_4444_TCP_ADDR:$HUB_PORT_4444_TCP_PORT/grid/register \
     ${REMOTE_HOST_PARAM} \
