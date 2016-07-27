@@ -9,7 +9,8 @@ USER root
 RUN sh -c 'echo "deb http://deb.opera.com/opera-developer/ stable non-free" >> /etc/apt/sources.list.d/opera.list' \
   && sh -c 'wget -O - http://deb.opera.com/archive.key | apt-key add -' \
   && apt-get update -qq \
-  && apt-get install -qqy opera-developer
+  && apt-get install -qqy opera-developer \
+  && ln -s /usr/bin/opera-developer /usr/bin/opera
 
 #========================
 # Selenium Configuration
