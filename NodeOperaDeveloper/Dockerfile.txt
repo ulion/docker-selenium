@@ -11,6 +11,18 @@ RUN sh -c 'echo "deb http://deb.opera.com/opera-developer/ stable non-free" >> /
   && apt-get install -qqy opera-developer \
   && ln -s /usr/bin/opera-developer /usr/bin/opera
 
+#==================
+# Opera webdriver
+#==================
+ENV OPERA_DRIVER_VERSION 0.2.2
+RUN wget --no-verbose -O /tmp/operadriver_linux64.zip https://github.com/operasoftware/operachromiumdriver/releases/download/v$OPERA_DRIVER_VERSION/operadriver_linux64.zip \
+  && rm -rf /opt/selenium/operadriver \
+  && unzip /tmp/operadriver_linux64.zip -d /opt/selenium \
+  && rm /tmp/operadriver_linux64.zip \
+  && mv /opt/selenium/operadriver /opt/selenium/operadriver-$OPERA_DRIVER_VERSION \
+  && chmod 755 /opt/selenium/operadriver-$OPERA_DRIVER_VERSION \
+  && ln -fs /opt/selenium/operadriver-$OPERA_DRIVER_VERSION /usr/bin/operadriver
+
 #========================
 # Selenium Configuration
 #========================
