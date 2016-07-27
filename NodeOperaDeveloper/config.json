@@ -1,11 +1,6 @@
 {
   "capabilities": [
     {
-      "browserName": "*opera",
-      "maxInstances": 1,
-      "seleniumProtocol": "Selenium"
-    },
-    {
       "browserName": "opera",
       "maxInstances": 1,
       "seleniumProtocol": "WebDriver"
