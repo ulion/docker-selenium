@@ -1,1 +1,1 @@
-require('./smoke-test')('operablink');
+require('./smoke-test')('operablink', process.argv[2]=='private');
